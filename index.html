@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SeamlessPOC — Healthcare IT Installation, Done Seamlessly</title>
+  <meta name="description" content="SeamlessPOC takes healthcare IT installation completely off your plate — wall mounts, cable management, device deployment, and full facility rollouts. One vendor. One quote. Done right the first time.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <nav class="nav">
+    <div class="container nav-inner">
+      <a href="index.html" class="nav-logo"><img src="spoclogo.png" alt="SeamlessPOC" height="44"></a>
+      <button class="nav-toggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="mobile-menu">
+      <a href="index.html" class="active">Home</a>
+      <a href="../services.html">Services</a>
+      <a href="../about.html">About</a>
+      <a href="../contact.html" class="nav-cta-mobile">Schedule a Project</a>
+    </div>
+  </nav>
+
+  <section class="hero hero-home">
+    <div class="hero-media">
+      <img src="seamlessmobileoptimized3.png" alt="Hospital room technology install featuring a wall-mounted TV, wall arm workstation, and a mobile medical cart." class="hero-image">
+      <div class="hero-content">
+        <h1>Healthcare IT Integration, Done Right.</h1>
+        <p>Planning, procurement, installation, go-live, and long-term service, fully coordinated from start to finish, on your schedule.</p>
+        <div class="btn-group">
+          <a href="../contact.html" class="btn btn-primary">Get In Touch</a>
+          <a href="../services.html" class="btn btn-secondary">View Services</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="process-section" id="process">
+    <div class="container">
+      <h2>Every Deployment Follows a Proven Process</h2>
+      <p class="process-subheading">From discovery to long-term support — we handle every step.</p>
+
+      <div class="process-diagram" aria-label="Seamless POC service lifecycle diagram">
+        <div class="process-ring" aria-hidden="true"></div>
+
+        <div class="process-center">
+          <strong>Seamless POC</strong>
+          <span>Your Point of Care Technology Partner</span>
+        </div>
+
+        <button type="button" class="process-node process-node-1 is-active" data-service="discovery" aria-pressed="true">Discovery <span>+ Planning</span></button>
+        <button type="button" class="process-node process-node-2" data-service="product" aria-pressed="false">Product <span>Specification</span></button>
+        <button type="button" class="process-node process-node-3" data-service="procurement" aria-pressed="false">Procurement <span>+ Coordination</span></button>
+        <button type="button" class="process-node process-node-4" data-service="installation" aria-pressed="false">Installation <span>+ Testing</span></button>
+        <button type="button" class="process-node process-node-5" data-service="training" aria-pressed="false">Training <span>+ Go-Live</span></button>
+        <button type="button" class="process-node process-node-6" data-service="support" aria-pressed="false">Service <span>+ Support</span></button>
+      </div>
+
+      <article class="process-detail-card" aria-live="polite">
+        <h3 id="process-detail-title">Discovery + Planning</h3>
+        <p id="process-detail-body">We align stakeholders, define project scope, and establish a clear plan for successful deployment. Our team evaluates clinical workflows, room configurations, and infrastructure to understand how technology should function at the point of care.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="proof">
+    <div class="container">
+      <h2>Built for hospitals and health systems.</h2>
+      <ul class="proof-list">
+        <li>One partner for planning, sourcing, installation, and rollout support.</li>
+        <li>Factory-trained technicians with healthcare environment experience.</li>
+        <li>Flexible install windows to minimize disruption to clinical operations.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="cta-strip">
+    <div class="container">
+      <h3>Ready to scope your next project?</h3>
+      <a href="../contact.html" class="btn btn-primary">Schedule a Project</a>
+    </div>
+  </section>
+
+  <script src="../script.js"></script>
+  <script>
+    (function () {
+      var section = document.querySelector('.process-section');
+      if (!section) return;
+
+      var nodes = section.querySelectorAll('.process-node');
+      var titleEl = section.querySelector('#process-detail-title');
+      var bodyEl = section.querySelector('#process-detail-body');
+
+      var serviceDetails = {
+        discovery: {
+          title: 'Discovery + Planning',
+          body: 'We align stakeholders, define project scope, and establish a clear plan for successful deployment. Our team evaluates clinical workflows, room configurations, and infrastructure to understand how technology should function at the point of care.'
+        },
+        product: {
+          title: 'Product Specification',
+          body: 'We help select the optimal mounts, carts, cabinets, and components based on workflow, durability, and long-term support needs. Clinicians can test and compare equipment in their environment to ensure the right fit before finalizing decisions.'
+        },
+        procurement: {
+          title: 'Procurement + Coordination',
+          body: 'Seamless consolidates equipment, materials, labor, and coordination into one streamlined purchasing process. We coordinate logistics, scheduling, and deployment planning to support efficient multi-room or multi-unit installations.'
+        },
+        installation: {
+          title: 'Installation + Testing',
+          body: 'Our experienced technicians complete clean, compliant installations within active healthcare environments.'
+        },
+        training: {
+          title: 'Training + Go-Live',
+          body: 'We support launch day to ensure all equipment is functioning properly and clinicians are ready to use it with confidence.'
+        },
+        support: {
+          title: 'Service + Support',
+          body: 'Ongoing maintenance, repairs, and lifecycle management protect your investment and keep critical point-of-care technology running reliably.'
+        }
+      };
+
+      function setActive(serviceKey, activeNode) {
+        var data = serviceDetails[serviceKey];
+        if (!data) return;
+
+        nodes.forEach(function (node) {
+          var isActive = node === activeNode;
+          node.classList.toggle('is-active', isActive);
+          node.setAttribute('aria-pressed', isActive ? 'true' : 'false');
+        });
+
+        titleEl.textContent = data.title;
+        bodyEl.textContent = data.body;
+      }
+
+      nodes.forEach(function (node) {
+        node.addEventListener('click', function () {
+          setActive(node.getAttribute('data-service'), node);
+        });
+      });
+    })();
+  </script>
+</body>
+</html>
