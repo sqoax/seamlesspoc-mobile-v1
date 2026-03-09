@@ -8,9 +8,10 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+  <meta name="theme-color" content="#212a49">
   <link rel="stylesheet" href="styles.css">
 </head>
-<body>
+<body id="top">
   <nav class="nav">
     <div class="container nav-inner">
       <a href="index.html" class="nav-logo"><img src="spoclogo.png" alt="SeamlessPOC" height="44"></a>
@@ -19,10 +20,10 @@
       </button>
     </div>
     <div class="mobile-menu">
-      <a href="index.html" class="active">Home</a>
-      <a href="../services.html">Services</a>
-      <a href="../about.html">About</a>
-      <a href="../contact.html" class="nav-cta-mobile">Schedule a Project</a>
+      <a href="#top">Home</a>
+      <a href="#process">Our Process</a>
+      <a href="#about">About</a>
+      <a href="#contact" class="nav-cta-mobile">Schedule a Project</a>
     </div>
   </nav>
 
@@ -33,8 +34,8 @@
         <h1>Healthcare IT Integration, Done Right.</h1>
         <p>Planning, procurement, installation, go-live, and long-term service, fully coordinated from start to finish, on your schedule.</p>
         <div class="btn-group">
-          <a href="../contact.html" class="btn btn-primary">Get In Touch</a>
-          <a href="../services.html" class="btn btn-secondary">View Services</a>
+          <a href="#contact" class="btn btn-primary">Get In Touch</a>
+          <a href="#process" class="btn btn-secondary">View Services</a>
         </div>
       </div>
     </div>
@@ -45,101 +46,243 @@
       <h2>Every Deployment Follows a Proven Process</h2>
       <p class="process-subheading">From discovery to long-term support — we handle every step.</p>
 
-      <div class="process-diagram" aria-label="Seamless POC service lifecycle diagram">
-        <div class="process-ring" aria-hidden="true"></div>
-
-        <div class="process-center">
-          <strong>Seamless POC</strong>
-          <span>Your Point of Care Technology Partner</span>
-        </div>
-
-        <button type="button" class="process-node process-node-1 is-active" data-service="discovery" aria-pressed="true">Discovery <span>+ Planning</span></button>
-        <button type="button" class="process-node process-node-2" data-service="product" aria-pressed="false">Product <span>Specification</span></button>
-        <button type="button" class="process-node process-node-3" data-service="procurement" aria-pressed="false">Procurement <span>+ Coordination</span></button>
-        <button type="button" class="process-node process-node-4" data-service="installation" aria-pressed="false">Installation <span>+ Testing</span></button>
-        <button type="button" class="process-node process-node-5" data-service="training" aria-pressed="false">Training <span>+ Go-Live</span></button>
-        <button type="button" class="process-node process-node-6" data-service="support" aria-pressed="false">Service <span>+ Support</span></button>
+      <div class="process-timeline" aria-label="Seamless POC service lifecycle">
+        <button type="button" class="process-step is-active" data-service="discovery" aria-expanded="true">
+          <span class="step-number">01</span>
+          <div class="step-content">
+            <h3 class="step-title">Discovery + Planning</h3>
+            <p class="step-body">We align stakeholders, define project scope, and establish a clear plan for successful deployment. Our team evaluates clinical workflows, room configurations, and infrastructure to understand how technology should function at the point of care.</p>
+          </div>
+        </button>
+        <button type="button" class="process-step" data-service="product" aria-expanded="false">
+          <span class="step-number">02</span>
+          <div class="step-content">
+            <h3 class="step-title">Product Specification</h3>
+            <p class="step-body">We help select the optimal mounts, carts, cabinets, and components based on workflow, durability, and long-term support needs. Clinicians can test and compare equipment in their environment to ensure the right fit before finalizing decisions.</p>
+          </div>
+        </button>
+        <button type="button" class="process-step" data-service="procurement" aria-expanded="false">
+          <span class="step-number">03</span>
+          <div class="step-content">
+            <h3 class="step-title">Procurement + Coordination</h3>
+            <p class="step-body">Seamless consolidates equipment, materials, labor, and coordination into one streamlined purchasing process. We coordinate logistics, scheduling, and deployment planning to support efficient multi-room or multi-unit installations.</p>
+          </div>
+        </button>
+        <button type="button" class="process-step" data-service="installation" aria-expanded="false">
+          <span class="step-number">04</span>
+          <div class="step-content">
+            <h3 class="step-title">Installation + Testing</h3>
+            <p class="step-body">Our experienced technicians complete clean, compliant installations within active healthcare environments.</p>
+          </div>
+        </button>
+        <button type="button" class="process-step" data-service="training" aria-expanded="false">
+          <span class="step-number">05</span>
+          <div class="step-content">
+            <h3 class="step-title">Training + Go-Live</h3>
+            <p class="step-body">We support launch day to ensure all equipment is functioning properly and clinicians are ready to use it with confidence.</p>
+          </div>
+        </button>
+        <button type="button" class="process-step" data-service="support" aria-expanded="false">
+          <span class="step-number">06</span>
+          <div class="step-content">
+            <h3 class="step-title">Service + Support</h3>
+            <p class="step-body">Ongoing maintenance, repairs, and lifecycle management protect your investment and keep critical point-of-care technology running reliably.</p>
+          </div>
+        </button>
       </div>
-
-      <article class="process-detail-card" aria-live="polite">
-        <h3 id="process-detail-title">Discovery + Planning</h3>
-        <p id="process-detail-body">We align stakeholders, define project scope, and establish a clear plan for successful deployment. Our team evaluates clinical workflows, room configurations, and infrastructure to understand how technology should function at the point of care.</p>
-      </article>
     </div>
   </section>
 
-  <section class="proof">
+  <section class="install-section">
     <div class="container">
-      <h2>Built for hospitals and health systems.</h2>
-      <ul class="proof-list">
-        <li>One partner for planning, sourcing, installation, and rollout support.</li>
-        <li>Factory-trained technicians with healthcare environment experience.</li>
-        <li>Flexible install windows to minimize disruption to clinical operations.</li>
+      <span class="install-eyebrow">What We Install</span>
+      <h2>Mounted &amp; Mobile Clinical Equipment</h2>
+      <div class="install-grid">
+        <div class="install-item">
+          <span class="install-dash"></span>
+          Articulating monitor mounts
+        </div>
+        <div class="install-item">
+          <span class="install-dash"></span>
+          Wall workstations &amp; cabinets
+        </div>
+        <div class="install-item">
+          <span class="install-dash"></span>
+          Mobile computing carts
+        </div>
+        <div class="install-item">
+          <span class="install-dash"></span>
+          Virtual care / vRN setups
+        </div>
+        <div class="install-item">
+          <span class="install-dash"></span>
+          Battery systems &amp; power management
+        </div>
+        <div class="install-item">
+          <span class="install-dash"></span>
+          Peripherals &amp; point-of-care accessories
+        </div>
+      </div>
+      <p class="install-footnote">We ensure every component fits the workflow — not just the wall.</p>
+    </div>
+  </section>
+
+  <section class="experience" id="about">
+    <div class="container">
+      <div class="exp-stat">
+        <span class="exp-number">30</span>
+        <span class="exp-label">Years in<br>Hospital Environments</span>
+      </div>
+      <p class="exp-lead">Seamless is not a product reseller that installs as an afterthought. We are workflow-driven specialists who understand:</p>
+      <ul class="exp-list">
+        <li>
+          <svg class="exp-check" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="10" fill="rgba(150,202,79,0.15)"/><path d="M6 10.5l2.5 2.5L14 8" stroke="#96ca4f" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Active patient care environments
+        </li>
+        <li>
+          <svg class="exp-check" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="10" fill="rgba(150,202,79,0.15)"/><path d="M6 10.5l2.5 2.5L14 8" stroke="#96ca4f" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Infection control and compliance standards
+        </li>
+        <li>
+          <svg class="exp-check" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="10" fill="rgba(150,202,79,0.15)"/><path d="M6 10.5l2.5 2.5L14 8" stroke="#96ca4f" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Coordination with facilities and IT
+        </li>
+        <li>
+          <svg class="exp-check" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="10" fill="rgba(150,202,79,0.15)"/><path d="M6 10.5l2.5 2.5L14 8" stroke="#96ca4f" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Multi-unit and systemwide rollouts
+        </li>
+        <li>
+          <svg class="exp-check" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="10" fill="rgba(150,202,79,0.15)"/><path d="M6 10.5l2.5 2.5L14 8" stroke="#96ca4f" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Working inside operating hospitals without disruption
+        </li>
       </ul>
+      <blockquote class="exp-quote">
+        When we install it, it works — and it stays working.
+      </blockquote>
     </div>
   </section>
 
-  <section class="cta-strip">
+  <section class="contact-section" id="contact">
     <div class="container">
-      <h3>Ready to scope your next project?</h3>
-      <a href="../contact.html" class="btn btn-primary">Schedule a Project</a>
+      <h2>Let's Scope Your Next Project</h2>
+      <p class="contact-subheading">Tell us what you're working on and we'll get back to you within one business day.</p>
+      <form id="contact-form" class="contact-form" novalidate>
+        <div class="form-row">
+          <label for="cf-name" class="form-label">Name</label>
+          <input type="text" id="cf-name" name="name" required autocomplete="name" class="form-input">
+        </div>
+        <div class="form-row">
+          <label for="cf-org" class="form-label">Organization</label>
+          <input type="text" id="cf-org" name="organization" autocomplete="organization" class="form-input">
+        </div>
+        <div class="form-row">
+          <label for="cf-email" class="form-label">Email</label>
+          <input type="email" id="cf-email" name="email" required autocomplete="email" class="form-input">
+        </div>
+        <div class="form-row">
+          <label for="cf-phone" class="form-label">Phone</label>
+          <input type="tel" id="cf-phone" name="phone" autocomplete="tel" class="form-input">
+        </div>
+        <div class="form-row">
+          <label for="cf-message" class="form-label">Project Details</label>
+          <textarea id="cf-message" name="message" rows="4" required class="form-input"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary form-submit">Send Message</button>
+      </form>
+      <div id="form-success" class="form-success" style="display:none;">
+        <svg width="40" height="40" viewBox="0 0 40 40" fill="none"><circle cx="20" cy="20" r="20" fill="#96ca4f"/><path d="M12 20.5l5.5 5.5L28 15" stroke="#212a49" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <h3>Message Sent</h3>
+        <p>We'll be in touch soon.</p>
+      </div>
     </div>
   </section>
 
-  <script src="../script.js"></script>
   <script>
+    // Nav toggle
     (function () {
-      var section = document.querySelector('.process-section');
-      if (!section) return;
+      var toggle = document.querySelector('.nav-toggle');
+      var menu = document.querySelector('.mobile-menu');
+      var nav = document.querySelector('.nav');
 
-      var nodes = section.querySelectorAll('.process-node');
-      var titleEl = section.querySelector('#process-detail-title');
-      var bodyEl = section.querySelector('#process-detail-body');
-
-      var serviceDetails = {
-        discovery: {
-          title: 'Discovery + Planning',
-          body: 'We align stakeholders, define project scope, and establish a clear plan for successful deployment. Our team evaluates clinical workflows, room configurations, and infrastructure to understand how technology should function at the point of care.'
-        },
-        product: {
-          title: 'Product Specification',
-          body: 'We help select the optimal mounts, carts, cabinets, and components based on workflow, durability, and long-term support needs. Clinicians can test and compare equipment in their environment to ensure the right fit before finalizing decisions.'
-        },
-        procurement: {
-          title: 'Procurement + Coordination',
-          body: 'Seamless consolidates equipment, materials, labor, and coordination into one streamlined purchasing process. We coordinate logistics, scheduling, and deployment planning to support efficient multi-room or multi-unit installations.'
-        },
-        installation: {
-          title: 'Installation + Testing',
-          body: 'Our experienced technicians complete clean, compliant installations within active healthcare environments.'
-        },
-        training: {
-          title: 'Training + Go-Live',
-          body: 'We support launch day to ensure all equipment is functioning properly and clinicians are ready to use it with confidence.'
-        },
-        support: {
-          title: 'Service + Support',
-          body: 'Ongoing maintenance, repairs, and lifecycle management protect your investment and keep critical point-of-care technology running reliably.'
-        }
-      };
-
-      function setActive(serviceKey, activeNode) {
-        var data = serviceDetails[serviceKey];
-        if (!data) return;
-
-        nodes.forEach(function (node) {
-          var isActive = node === activeNode;
-          node.classList.toggle('is-active', isActive);
-          node.setAttribute('aria-pressed', isActive ? 'true' : 'false');
+      if (toggle && menu) {
+        toggle.addEventListener('click', function () {
+          toggle.classList.toggle('open');
+          menu.classList.toggle('open');
+          document.body.style.overflow = menu.classList.contains('open') ? 'hidden' : '';
         });
-
-        titleEl.textContent = data.title;
-        bodyEl.textContent = data.body;
+        menu.querySelectorAll('a').forEach(function (link) {
+          link.addEventListener('click', function () {
+            toggle.classList.remove('open');
+            menu.classList.remove('open');
+            document.body.style.overflow = '';
+          });
+        });
       }
 
-      nodes.forEach(function (node) {
-        node.addEventListener('click', function () {
-          setActive(node.getAttribute('data-service'), node);
+      window.addEventListener('scroll', function () {
+        if (nav) nav.classList.toggle('scrolled', window.scrollY > 20);
+      });
+    })();
+  </script>
+  <script>
+    // Contact form → Discord webhook
+    (function () {
+      var form = document.getElementById('contact-form');
+      var success = document.getElementById('form-success');
+      if (!form) return;
+
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        var btn = form.querySelector('.form-submit');
+        btn.disabled = true;
+        btn.textContent = 'Sending...';
+
+        var payload = {
+          embeds: [{
+            title: 'New Contact Form Submission',
+            color: 0x96ca4f,
+            fields: [
+              { name: 'Name', value: form.name.value || '—', inline: true },
+              { name: 'Organization', value: form.organization.value || '—', inline: true },
+              { name: 'Email', value: form.email.value || '—', inline: true },
+              { name: 'Phone', value: form.phone.value || '—', inline: true },
+              { name: 'Project Details', value: form.message.value || '—' }
+            ],
+            timestamp: new Date().toISOString()
+          }]
+        };
+
+        fetch('https://discord.com/api/webhooks/1480639455835455498/FTNueJtBxiqebVop3xEANi02GNt1gjHbc5a9wzY14nX1T2XFiDojXZlOkk58fM2yLM_y', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload)
+        }).then(function () {
+          form.style.display = 'none';
+          success.style.display = 'flex';
+        }).catch(function () {
+          btn.disabled = false;
+          btn.textContent = 'Send Message';
+          alert('Something went wrong. Please try again.');
+        });
+      });
+    })();
+  </script>
+  <script>
+    (function () {
+      var steps = document.querySelectorAll('.process-step');
+      if (!steps.length) return;
+
+      steps.forEach(function (step) {
+        step.addEventListener('click', function () {
+          var wasActive = step.classList.contains('is-active');
+          steps.forEach(function (s) {
+            s.classList.remove('is-active');
+            s.setAttribute('aria-expanded', 'false');
+          });
+          if (!wasActive) {
+            step.classList.add('is-active');
+            step.setAttribute('aria-expanded', 'true');
+          }
         });
       });
     })();
