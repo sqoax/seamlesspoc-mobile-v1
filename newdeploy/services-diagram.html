@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SeamlessPOC Services Diagram</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --navy: #212a49;
+      --green: #96ca4f;
+      --ink: #16213f;
+      --outer-bg: radial-gradient(circle at 30% 24%, #ffffff 0%, #f2f5fb 58%, #dde5f1 100%);
+      --outer-border: rgba(255, 255, 255, 0.58);
+      --outer-shadow: 0 12px 28px rgba(5, 12, 34, 0.36), inset 0 1px 0 rgba(255, 255, 255, 0.8);
+      --center-shadow: 0 18px 34px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.35);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100svh;
+      display: grid;
+      place-items: center;
+      background:
+        radial-gradient(circle at 50% 6%, rgba(61, 124, 161, 0.2), transparent 44%),
+        radial-gradient(circle at 7% 84%, rgba(150, 202, 79, 0.14), transparent 38%),
+        var(--navy);
+      font-family: "Poppins", sans-serif;
+      color: #fff;
+      padding: clamp(0.75rem, 2vw, 1.5rem);
+    }
+
+    .diagram {
+      position: relative;
+      width: min(94vw, 760px);
+      aspect-ratio: 1 / 1;
+      border-radius: 20px;
+      isolation: isolate;
+    }
+
+    .ring {
+      position: absolute;
+      inset: 12%;
+      border-radius: 50%;
+      border: 1px dashed rgba(255, 255, 255, 0.16);
+      opacity: 0.85;
+    }
+
+    .center {
+      position: absolute;
+      inset: 50% auto auto 50%;
+      transform: translate(-50%, -50%);
+      width: clamp(180px, 35vw, 282px);
+      aspect-ratio: 1 / 1;
+      border-radius: 50%;
+      background: radial-gradient(circle at 26% 20%, #a9dc64 0%, #96ca4f 62%, #88bb43 100%);
+      box-shadow: var(--center-shadow);
+      display: grid;
+      place-items: center;
+      text-align: center;
+      padding: 1rem;
+      z-index: 3;
+      color: var(--ink);
+    }
+
+    .center strong {
+      display: block;
+      font-size: clamp(1.25rem, 2.8vw, 2.05rem);
+      line-height: 1.05;
+      margin-bottom: 0.4rem;
+      font-weight: 800;
+    }
+
+    .center span {
+      display: block;
+      font-size: clamp(0.78rem, 2vw, 1.02rem);
+      line-height: 1.18;
+      letter-spacing: 0.02em;
+      font-weight: 500;
+    }
+
+    .node {
+      --angle: 0deg;
+      --orbit: clamp(170px, 31vw, 238px);
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      width: clamp(120px, 22vw, 206px);
+      aspect-ratio: 1 / 1;
+      border-radius: 50%;
+      border: 1px solid var(--outer-border);
+      background: var(--outer-bg);
+      color: var(--ink);
+      box-shadow: var(--outer-shadow);
+      display: grid;
+      place-items: center;
+      text-align: center;
+      padding: clamp(0.75rem, 1.2vw, 1rem);
+      font-size: clamp(0.9rem, 2.3vw, 1.02rem);
+      line-height: 1.15;
+      font-weight: 600;
+      letter-spacing: 0.01em;
+      transform:
+        translate(-50%, -50%)
+        rotate(var(--angle))
+        translateY(calc(var(--orbit) * -1))
+        rotate(calc(var(--angle) * -1));
+      transition: transform 260ms ease, box-shadow 260ms ease, filter 260ms ease;
+      z-index: 2;
+    }
+
+    .node::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: 50%;
+      background: radial-gradient(circle at 50% 28%, rgba(61, 124, 161, 0.12), transparent 66%);
+      opacity: 0;
+      transition: opacity 260ms ease;
+    }
+
+    .node:hover,
+    .node:focus-visible {
+      transform:
+        translate(-50%, -50%)
+        rotate(var(--angle))
+        translateY(calc((var(--orbit) - 8px) * -1))
+        rotate(calc(var(--angle) * -1));
+      box-shadow: 0 18px 30px rgba(4, 10, 31, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.9);
+      filter: saturate(1.08);
+      outline: none;
+    }
+
+    .node:hover::before,
+    .node:focus-visible::before {
+      opacity: 1;
+    }
+
+    .node-1 { --angle: 0deg; }
+    .node-2 { --angle: 60deg; }
+    .node-3 { --angle: 120deg; }
+    .node-4 { --angle: 180deg; }
+    .node-5 { --angle: 240deg; }
+    .node-6 { --angle: 300deg; }
+
+    @media (max-width: 560px) {
+      .diagram {
+        width: 100%;
+      }
+
+      .center {
+        width: clamp(152px, 40vw, 210px);
+      }
+
+      .node {
+        --orbit: clamp(136px, 33vw, 182px);
+        width: clamp(98px, 26vw, 148px);
+        font-size: clamp(0.76rem, 3.1vw, 0.92rem);
+        line-height: 1.1;
+        padding: 0.6rem;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .node {
+        transition: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <section class="diagram" aria-label="Seamless POC service lifecycle diagram">
+    <div class="ring" aria-hidden="true"></div>
+
+    <div class="center">
+      <div>
+        <strong>Seamless POC</strong>
+        <span>Your Point of Care Technology Partner</span>
+      </div>
+    </div>
+
+    <div class="node node-1" tabindex="0">Discovery<br>+<br>Planning</div>
+    <div class="node node-2" tabindex="0">Product<br>Specification</div>
+    <div class="node node-3" tabindex="0">Procurement<br>+<br>Coordination</div>
+    <div class="node node-4" tabindex="0">Installation<br>+<br>Testing</div>
+    <div class="node node-5" tabindex="0">Training<br>+<br>Go-Live</div>
+    <div class="node node-6" tabindex="0">Service<br>+<br>Support</div>
+  </section>
+</body>
+</html>
